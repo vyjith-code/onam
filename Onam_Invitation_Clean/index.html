@@ -193,31 +193,27 @@
  
 
   <!-- Fixed Audio Element -->
-  <audio id="onam-music" preload="auto" loop>
+  <audio id="onam-music" autoplay loop preload="auto">
     <source src="new-sound.mp3" type="audio/mpeg">
     
   </audio>
 
   <script>
-  const music = document.getElementById("onam-music");
+   const music = document.getElementById("onam-music");
 
   music.volume = 0.45;
 
- ം
   window.addEventListener("load", () => {
-    music.play().catch(() => {
-      console.log("Autoplay browser block ചെയ്തു.");
-    });
+    music.play().catch(() => {});
   });
 
-  
-  const startMusic = () => {
+  document.addEventListener("click", () => {
     music.play().catch(() => {});
-  };
+  }, { once: true });
 
-  document.addEventListener("click", startMusic, { once: true });
-  document.addEventListener("touchstart", startMusic, { once: true });
-  document.addEventListener("keydown", startMusic, { once: true });
+  document.addEventListener("touchstart", () => {
+    music.play().catch(() => {});
+  }, { once: true });
 </script>
 
   <script src="style.js"></script>
