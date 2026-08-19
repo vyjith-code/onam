@@ -190,61 +190,35 @@
   </main>
 
 
-  <!-- Add a Floating Music Button inside your <main> or near the top -->
-  <button id="music-toggle" class="music-btn" aria-label="Toggle Background Music">
-    🎵 Play Music
-  </button>
+ 
 
   <!-- Fixed Audio Element -->
   <audio id="onam-music" preload="auto" loop>
     <source src="new-sound.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
+    
   </audio>
 
   <script>
-    const music = document.getElementById("onam-music");
-    const musicBtn = document.getElementById("music-toggle");
-    music.volume = 0.45;
+  const music = document.getElementById("onam-music");
 
-    let isPlaying = false;
+  music.volume = 0.45;
 
-    function toggleMusic() {
-      if (isPlaying) {
-        music.pause();
-        musicBtn.textContent = "🔇 Play Music";
-        isPlaying = false;
-      } else {
-        music.play().then(() => {
-          musicBtn.textContent = "🔊 Pause Music";
-          isPlaying = true;
-        }).catch(err => {
-          console.error("Playback error:", err);
-        });
-      }
-    }
-
-    // Toggle on button click
-    musicBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleMusic();
+  // Page തുറക്കുമ്പോൾ music autoplay ചെയ്യാൻ ശ്രമിക്കും
+  window.addEventListener("load", () => {
+    music.play().catch(() => {
+      console.log("Autoplay browser block ചെയ്തു.");
     });
+  });
 
-    // Attempt to play on first user interaction anywhere on the screen
-    const handleFirstInteraction = () => {
-      if (!isPlaying) {
-        music.play().then(() => {
-          isPlaying = true;
-          musicBtn.textContent = "🔊 Pause Music";
-        }).catch(err => {
-          console.warn("Autoplay interaction waiting:", err);
-        });
-      }
-    };
+  // Browser autoplay block ചെയ്താൽ ആദ്യ click/touch-ൽ music തുടങ്ങും
+  const startMusic = () => {
+    music.play().catch(() => {});
+  };
 
-    window.addEventListener("pointerdown", handleFirstInteraction, { once: true });
-    window.addEventListener("keydown", handleFirstInteraction, { once: true });
-  </script>
-
+  document.addEventListener("click", startMusic, { once: true });
+  document.addEventListener("touchstart", startMusic, { once: true });
+  document.addEventListener("keydown", startMusic, { once: true });
+</script>
 
   <script src="style.js"></script>
 </body>
