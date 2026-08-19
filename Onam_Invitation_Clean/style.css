@@ -334,3 +334,13 @@ footer span {
 .dt{
       grid-template-columns: repeat(2, 1fr)!important;
 }
+
+
+@media (max-width: 620px) {
+.invitation {
+    position: relative;
+ 
+    width: min(100%);
+    min-height: 100vh;
+}
+}
