@@ -152,7 +152,7 @@
 
 
 
-    <section class="details dt">
+    <section class="details ">
       <div class="detail">
         <span class="icon">🌼</span>
         <div>
@@ -190,31 +190,14 @@
   </main>
 
 
- 
 
-  <!-- Fixed Audio Element -->
-  <audio id="onam-music" autoplay loop preload="auto">
-    <source src="new-sound2.mp3" type="audio/mpeg">
-    
-  </audio>
+  <audio autoplay>
+  <source src="new-sound.mp3"  type="audio/ogg">
+ <source src="new-sound.mp3" type="audio/mpeg">
 
-  <script>
-   const music = document.getElementById("onam-music");
+</audio>
 
-  music.volume = 0.45;
 
-  window.addEventListener("load", () => {
-    music.play().catch(() => {});
-  });
-
-  document.addEventListener("click", () => {
-    music.play().catch(() => {});
-  }, { once: true });
-
-  document.addEventListener("touchstart", () => {
-    music.play().catch(() => {});
-  }, { once: true });
-</script>
 
   <script src="style.js"></script>
 </body>
