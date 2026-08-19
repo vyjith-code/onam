@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onam Celebration 2026 | Invitation</title>
+  <meta name="description" content="You are warmly invited to celebrate Onam with us.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Onam Celebration 2026 | Invitation">
+  <meta property="og:description" content="Join us for a joyful Onam celebration filled with pookalam, sadya and togetherness.">
+  <meta property="og:image" content="images/onam-cover.svg">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <main class="invitation">
+    <div class="leaf leaf-left" aria-hidden="true">🌿</div>
+    <div class="leaf leaf-right" aria-hidden="true">🌿</div>
+
+    <section class="hero">
+
+      <img src="maveli.png"  alt="Onam Celebration" class="hero-image">
+      <div class="ornament">✦</div>
+      <p class="eyebrow">YOU ARE WARMLY INVITED</p>
+      <h1>Onam</h1>
+      <p class="malayalam">ഓണം ആഘോഷിക്കാം</p>
+      <p class="subtitle">A celebration of tradition, joy & togetherness</p>
+
+      <div class="pookalam-new" aria-label="Onam floral decoration">
+       <img src="pookkalam.png" alt="Pookalam" class="pookalam-image">
+      </div>
+
+      <p class="invite-text">
+        Come together with family and friends<br>
+        to celebrate the spirit of Onam.
+      </p>
+    </section>
+
+
+
+    <section class="">
+      <p>പണ്ട് സദ്യയുടെ സാമ്രാജ്യത്തിൽ നാല് സുഹൃത്തുക്കളുണ്ടായിരുന്നു — പപ്പടം, പരിപ്പ്, പായസം, പഴം. 👑
+പപ്പടം തന്റെ ശബ്ദത്തിൽ അഭിമാനിച്ചു. പരിപ്പ് തന്റെ രുചിയിൽ. പായസം തന്റെ മധുരത്തിൽ. പഴം തന്റെ പ്രത്യേകതയിൽ.
+ആദ്യം അവർ ഒരുമിച്ച് സദ്യയെ സമ്പൂർണ്ണമാക്കി. എല്ലാവരും അവരെ പ്രശംസിച്ചു. പക്ഷേ പ്രശംസ കൂടുന്തോറും അവരുടെ അഹങ്കാരവും വളർന്നു.
+“സദ്യയിലെ താരം ഞാൻ!” പപ്പടം പറഞ്ഞു.
+“അല്ല, ഞാൻ!” പരിപ്പ് തിരിച്ചടിച്ചു.
+പായസം ചിരിച്ചു. “എന്നെ കൂടാതെ സദ്യയ്ക്ക് എന്ത് മധുരം?”
+പഴവും വിട്ടുകൊടുത്തില്ല.
+അങ്ങനെ ചെറിയൊരു തമാശ വലിയൊരു മത്സരമായി. മത്സരം തർക്കമായി. തർക്കം ഒടുവിൽ പകയായി.
+ഒരിക്കൽ ഒന്നായിരുന്ന ആ നാല് സുഹൃത്തുക്കൾ,
+അന്ന് മുതൽ പരസ്പരം എതിരാളികളായി മാറി. 🔥</p>
+    </section>
+
+    <section class="details">
+      <div class="detail">
+        <span class="icon">🌼</span>
+        <div>
+          <small>DATE</small>
+          <strong>Thiruvonam</strong>
+          <span>2026</span>
+        </div>
+      </div>
+
+      <div class="detail">
+        <span class="icon">🍃</span>
+        <div>
+          <small>HIGHLIGHTS</small>
+          <strong>Onam Sadya</strong>
+          <span>Pookalam • Music • Togetherness</span>
+        </div>
+      </div>
+
+      <div class="detail">
+        <span class="icon">📍</span>
+        <div>
+          <small>VENUE</small>
+          <strong>Your Venue</strong>
+          <span>Add your location here</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="message-card">
+      <p class="quote">“May this Onam bring happiness, prosperity and beautiful memories to everyone.”</p>
+      <p class="malayalam-small">എല്ലാവർക്കും ഹൃദയം നിറഞ്ഞ ഓണാശംസകൾ</p>
+    </section>
+
+    <a class="location-btn" href="https://maps.google.com/" target="_blank" rel="noopener">
+      View Location
+    </a>
+
+    <footer>
+      <p>With love &amp; warm wishes</p>
+      <span>Happy Onam • 2026</span>
+    </footer>
+  </main>
+
+
+   <!-- <audio id="onam-music" loop>
+    <source src="Onam Vannallo.mp3" type="audio/mpeg">
+  </audio> -->
+
+<!-- Add a Floating Music Button inside your <main> or near the top -->
+<button id="music-toggle" class="music-btn" aria-label="Toggle Background Music">
+  🎵 Play Music
+</button>
+
+<!-- Fixed Audio Element -->
+<audio id="onam-music" preload="auto" loop>
+  <source src="story.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  const music = document.getElementById("onam-music");
+  const musicBtn = document.getElementById("music-toggle");
+  music.volume = 0.45;
+
+  let isPlaying = false;
+
+  function toggleMusic() {
+    if (isPlaying) {
+      music.pause();
+      musicBtn.textContent = "🔇 Play Music";
+      isPlaying = false;
+    } else {
+      music.play().then(() => {
+        musicBtn.textContent = "🔊 Pause Music";
+        isPlaying = true;
+      }).catch(err => {
+        console.error("Playback error:", err);
+      });
+    }
+  }
+
+  // Toggle on button click
+  musicBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleMusic();
+  });
+
+  // Attempt to play on first user interaction anywhere on the screen
+  const handleFirstInteraction = () => {
+    if (!isPlaying) {
+      music.play().then(() => {
+        isPlaying = true;
+        musicBtn.textContent = "🔊 Pause Music";
+      }).catch(err => {
+        console.warn("Autoplay interaction waiting:", err);
+      });
+    }
+  };
+
+  window.addEventListener("pointerdown", handleFirstInteraction, { once: true });
+  window.addEventListener("keydown", handleFirstInteraction, { once: true });
+</script>
+
+
+<script src="style.js"></script>
+</body>
+</html>
