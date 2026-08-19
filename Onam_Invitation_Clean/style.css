@@ -34,9 +34,10 @@ body {
 .invitation {
   position: relative;
   width: min(100%, 760px);
+  width: min(80%);;
   min-height: 100vh;
   margin: auto;
-  padding: 42px 22px 34px;
+  padding: 0px 22px 34px;
   overflow: hidden;
 }
 
@@ -44,7 +45,7 @@ body {
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 18px 8px 12px;
+  padding: 0px 8px 12px;
 }
 
 .ornament {
@@ -141,7 +142,7 @@ h1 {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
   margin: 28px 0;
 }
@@ -328,4 +329,8 @@ footer span {
 
 .ar{
       color: #a77718;
+}
+
+.dt{
+      grid-template-columns: repeat(2, 1fr)!important;
 }
